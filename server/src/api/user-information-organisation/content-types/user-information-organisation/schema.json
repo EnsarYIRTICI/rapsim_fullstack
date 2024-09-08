@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_information_organisations",
+  "info": {
+    "singularName": "user-information-organisation",
+    "pluralName": "user-information-organisations",
+    "displayName": "User_Information_Organisation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "tckn": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true
+    },
+    "userId": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

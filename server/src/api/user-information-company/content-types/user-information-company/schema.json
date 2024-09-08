@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_information_companies",
+  "info": {
+    "singularName": "user-information-company",
+    "pluralName": "user-information-companies",
+    "displayName": "User_Information_Company",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "vkn": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true
+    },
+    "userId": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

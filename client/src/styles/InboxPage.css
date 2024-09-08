@@ -1,0 +1,44 @@
+.list {
+  overflow-y: scroll;
+  width: 23rem;
+}
+
+.details {
+  background-color: rgb(243, 243, 243);
+}
+
+.inbox-item,
+.inbox-item-selected {
+  cursor: pointer;
+  user-select: none;
+}
+
+.inbox-item-selected {
+  background-color: rgb(243, 243, 243);
+}
+
+.inbox-item:hover {
+  background-color: rgb(243, 243, 243);
+}
+
+.back {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .back {
+    display: block;
+  }
+
+  .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .list {
+    flex: 1;
+  }
+}

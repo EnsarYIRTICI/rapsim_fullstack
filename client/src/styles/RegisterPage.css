@@ -1,0 +1,17 @@
+.register-forms {
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .register-forms {
+    width: 100%;
+  }
+}

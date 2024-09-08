@@ -1,0 +1,15 @@
+.add-central-dialog {
+  width: 50rem;
+}
+
+.data-table-cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .add-central-dialog {
+    width: 100vw;
+  }
+}

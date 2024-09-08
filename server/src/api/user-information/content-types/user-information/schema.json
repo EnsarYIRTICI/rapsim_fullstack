@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_informations",
+  "info": {
+    "singularName": "user-information",
+    "pluralName": "user-informations",
+    "displayName": "User_Information",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "tckn": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true
+    },
+    "userId": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
