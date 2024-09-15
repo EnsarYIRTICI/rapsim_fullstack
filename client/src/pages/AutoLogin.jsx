@@ -38,14 +38,14 @@ export default function AutoLogin() {
 
         let userInfo;
 
-        if (mePopulate.role.id === Role.PERSONAL) {
+        if (mePopulate.role.name === Role.AUTHENTICATED) {
           userInfo = await UserInformationService.FindPopulate(
             authToken,
             authId
           );
-        } else if (mePopulate.role.id === Role.COMPANY) {
+        } else if (mePopulate.role.name === Role.COMPANY) {
           userInfo = await CompInfoService.FindPopulate(authToken, authId);
-        } else if (mePopulate.role.id === Role.ORGANISATION) {
+        } else if (mePopulate.role.name === Role.ORGANISATION) {
           userInfo = await OrgInfoService.FindPopulate(authToken, authId);
         } else {
           throw Error("UNSUPPORTED ROLE");

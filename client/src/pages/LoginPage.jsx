@@ -129,17 +129,17 @@ export default function LoginPage() {
 
       console.log("ROLE ID", mePopulate.role.id);
 
-      if (mePopulate.role.id === Role.PERSONAL) {
+      if (mePopulate.role.name === Role.AUTHENTICATED) {
         userInfo = await UserInformationService.FindPopulate(
           authData.jwt,
           authData.user.id
         );
-      } else if (mePopulate.role.id === Role.COMPANY) {
+      } else if (mePopulate.role.name === Role.COMPANY) {
         userInfo = await CompInfoService.FindPopulate(
           authData.jwt,
           authData.user.id
         );
-      } else if (mePopulate.role.id === Role.ORGANISATION) {
+      } else if (mePopulate.role.name === Role.ORGANISATION) {
         userInfo = await OrgInfoService.FindPopulate(
           authData.jwt,
           authData.user.id
@@ -148,7 +148,7 @@ export default function LoginPage() {
         throw Error("UNSUPPORTED ROLE");
       }
 
-      console.log(userInfo);
+      console.log("USER INFO POPULATE", userInfo);
 
       let populateData = userInfo.data[0];
       let userData = populateData.attributes.userId.data;

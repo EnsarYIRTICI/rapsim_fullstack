@@ -6,21 +6,22 @@ import { useAuth } from "../contexts/AuthContext";
 
 import LoginPage from "../pages/LoginPage";
 import RegisterPreferencesPage from "../pages/RegisterPreferencePage";
-import RegisterPage from "./RegisterPage";
 import PersonalRegisterPage from "../pages/PersonalRegisterPage";
 import OrganisationRegisterPage from "../pages/OrganisationRegisterPage";
 import CompanyRegisterPage from "../pages/CompanyRegisterPage";
-import NavigationBar from "../components/NavigationBar";
-import HomePage from "../pages/HomePage";
 import InboxPage from "../pages/InboxPage";
-import AnyPage from "./AnyPage";
-import ForgotPassword from "./ForgotPassword";
+import ForgotPassword from "../pages/ForgotPassword";
+import AutoLogin from "../pages/AutoLogin";
+
+import AnyPage from "../pages/AnyPage";
+import HomePage from "../pages/HomePage";
+import CentralPage from "../pages/CentralPage";
+import MapPage from "../pages/MapPage";
+import AccountPage from "../pages/AccountPage";
+import UsersPage from "../pages/UsersPage";
+
 import BottomNavigationBar from "../components/BottomNavigationBar";
-import CentralPage from "./CentralPage";
-import MapPage from "./MapPage";
-import AccountPage from "./AccountPage";
-import AutoLogin from "./AutoLogin";
-import UsersPage from "./UsersPage";
+import NavigationBar from "../components/NavigationBar";
 
 export default function RoutesPage() {
   const { matches, authData } = useAuth();

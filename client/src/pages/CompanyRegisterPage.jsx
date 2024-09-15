@@ -71,9 +71,9 @@ export default function CompanyRegisterPage() {
       activeIndex: 0,
       validate: () =>
         customValidate(
-          "tckn",
+          "vkn",
           Validation.TCKN,
-          "TCKN 11 karakter ve sayı içermelidir"
+          "VKN 11 karakter ve sayı içermelidir"
         ),
       input: {
         placeholder: "",

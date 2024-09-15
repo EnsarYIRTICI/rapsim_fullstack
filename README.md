@@ -7,3 +7,8 @@
 ## Config:
 ### -.env
 
+# Rapsim with React
+
+## Required:
+### -Node.js
+

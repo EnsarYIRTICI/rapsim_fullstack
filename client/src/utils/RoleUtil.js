@@ -1,7 +1,7 @@
 class Role {
-  static PERSONAL = 6;
-  static COMPANY = 7;
-  static ORGANISATION = 8;
+  static AUTHENTICATED = "Authenticated";
+  static COMPANY = "Company";
+  static ORGANISATION = "Organisation";
 }
 
 export default Role;

@@ -45,19 +45,17 @@ export default function AccountTabGeneral({
   });
 
   const accountTypeName =
-    userData.role.id === Role.PERSONAL
+    userData.role.name === Role.AUTHENTICATED
       ? "Bireysel Hesap"
-      : userData.role.id === Role.COMPANY
+      : userData.role.name === Role.COMPANY
       ? "Firma Hesabı"
-      : userData.role.id === Role.ORGANISATION
+      : userData.role.name === Role.ORGANISATION
       ? "Kurum Hesabı"
       : "Error";
 
-  const lastname = populateData.lastname ?? "";
-
   const labels = [
     {
-      label: populateData.name + " " + lastname,
+      label: populateData.name + " " + populateData.lastname ?? "",
       icon: "pi-credit-card",
     },
     {

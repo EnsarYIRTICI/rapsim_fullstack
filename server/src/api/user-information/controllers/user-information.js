@@ -34,7 +34,7 @@ const createUserSchema = yup.object().shape({
 const { createCoreController } = require("@strapi/strapi").factories;
 
 const api = "api::user-information.user-information";
-const roleId = 6;
+const roleName = "Authenticated";
 
 module.exports = createCoreController(api, ({ strapi }) => ({
   async customEndpoint(ctx) {
@@ -82,11 +82,19 @@ module.exports = createCoreController(api, ({ strapi }) => ({
     const { username, email, password, name, lastname, tckn } =
       ctx.request.body;
 
+    const role = await strapi.query("plugin::users-permissions.role").findOne({
+      where: { name: roleName },
+    });
+
+    if (!role) {
+      ctx.throw(400, "Role bulunamadı.");
+    }
+
     const user = await strapi.plugins["users-permissions"].services.user.add({
       username,
       email,
       password,
-      role: roleId,
+      role: role.id,
       confirmed: true,
       provider: "local",
     });
